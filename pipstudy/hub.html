@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Study Hub — Partners in Progress</title>
+<link rel="icon" type="image/png" href="assets/favicon-32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="assets/favicon-192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div id="app-nav" class="app-nav"></div>
+
+<main class="app-main">
+  <div class="container" style="max-width: 620px;">
+
+    <div id="announcement-slot"></div>
+
+    <div class="live-strip" id="live-strip">
+      <div class="left">
+        <span class="live-dot"></span>
+        <div>
+          <div class="count" id="live-count">— studying right now</div>
+          <div class="sub">Tap to see who</div>
+        </div>
+      </div>
+      <span class="chevron">›</span>
+    </div>
+
+    <div class="focus-cta">
+      <div>
+        <h3>🔒 Start a focus session</h3>
+        <p>Pick a duration and subject — study alongside everyone else.</p>
+      </div>
+      <button id="open-session-btn" class="btn btn-gold btn-sm">Start</button>
+    </div>
+
+    <div class="card card-pad composer">
+      <label for="composer-input">What are you working on?</label>
+      <textarea id="composer-input" maxlength="180" rows="2" placeholder="Anyone studying?"></textarea>
+      <div class="composer-foot">
+        <span class="char-count"><span id="char-count">0</span>/180</span>
+        <button id="post-btn" class="btn btn-gold btn-sm">Post</button>
+      </div>
+    </div>
+
+    <div class="quick-status-grid" id="quick-status-grid"></div>
+
+    <div class="feed-heading">Study feed</div>
+    <div id="feed-list" class="stagger"></div>
+  </div>
+</main>
+
+<div id="bottom-nav" class="bottom-nav"></div>
+
+<!-- LIVE LIST MODAL -->
+<div class="modal-backdrop hidden" id="live-modal">
+  <div class="modal-sheet">
+    <div class="modal-head">
+      <h3>Studying right now</h3>
+      <button class="modal-close" data-close="live-modal">✕</button>
+    </div>
+    <div id="live-list"></div>
+  </div>
+</div>
+
+<!-- START SESSION MODAL -->
+<div class="modal-backdrop hidden" id="session-setup-modal">
+  <div class="modal-sheet">
+    <div class="modal-head">
+      <h3>Start a focus session</h3>
+      <button class="modal-close" data-close="session-setup-modal">✕</button>
+    </div>
+    <div class="field">
+      <label>Duration</label>
+      <div class="choice-grid" id="duration-choices">
+        <div class="choice-pill" data-value="25">25 min</div>
+        <div class="choice-pill" data-value="45">45 min</div>
+        <div class="choice-pill" data-value="60">60 min</div>
+        <div class="choice-pill" data-value="90">90 min</div>
+      </div>
+      <input type="number" id="custom-duration" placeholder="Custom minutes" min="1" max="240" style="margin-top:8px; display:none; width:100%; padding:12px 14px; border:1px solid var(--mist-line); border-radius:var(--r-sm);">
+      <div class="field-hint"><a href="#" id="custom-duration-toggle">Use a custom duration</a></div>
+    </div>
+    <div class="field">
+      <label for="session-subject">Subject</label>
+      <select id="session-subject">
+        <option>Biology</option>
+        <option>Chemistry</option>
+        <option>Physics</option>
+        <option>Math</option>
+        <option>English</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="session-goal">Goal</label>
+      <input id="session-goal" type="text" placeholder="Finish Chapter 5">
+    </div>
+    <button id="start-session-btn" class="btn btn-gold btn-block">🔒 Start session</button>
+  </div>
+</div>
+
+<!-- TIMER MODAL -->
+<div class="modal-backdrop hidden" id="timer-modal">
+  <div class="modal-sheet">
+    <div class="modal-head">
+      <h3>Focus session</h3>
+      <button class="modal-close" data-close="timer-modal">✕</button>
+    </div>
+    <div class="timer-shell">
+      <div class="timer-digits" id="timer-digits">00:00</div>
+      <div class="timer-subject" id="timer-subject">SUBJECT</div>
+      <div class="timer-goal" id="timer-goal"></div>
+      <div class="timer-partners" id="timer-partners"></div>
+    </div>
+    <div class="timer-actions">
+      <button id="timer-leave-btn" class="btn btn-line">Leave session</button>
+    </div>
+  </div>
+</div>
+
+<!-- SESSION COMPLETE MODAL -->
+<div class="modal-backdrop hidden" id="complete-modal">
+  <div class="modal-sheet center">
+    <h2 style="margin-bottom: 10px;">Session complete ✅</h2>
+    <p class="muted" id="complete-summary" style="margin-bottom: 20px;"></p>
+    <div style="display:grid; gap:10px;">
+      <button id="share-progress-btn" class="btn btn-gold btn-block">Share progress</button>
+      <button id="start-another-btn" class="btn btn-line btn-block">Start another session</button>
+    </div>
+  </div>
+</div>
+
+<!-- REPORT MODAL -->
+<div class="modal-backdrop hidden" id="report-modal">
+  <div class="modal-sheet">
+    <div class="modal-head">
+      <h3>Report post</h3>
+      <button class="modal-close" data-close="report-modal">✕</button>
+    </div>
+    <div class="field">
+      <label for="report-reason">Reason</label>
+      <select id="report-reason">
+        <option value="spam">Spam</option>
+        <option value="bullying">Bullying</option>
+        <option value="inappropriate">Inappropriate content</option>
+        <option value="off_topic">Off-topic</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <button id="submit-report-btn" class="btn btn-danger btn-block">Submit report</button>
+  </div>
+</div>
+
+<script type="module" src="js/hub.js"></script>
+</body>
+</html>

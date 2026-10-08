@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Awaiting approval — Partners in Progress</title>
+<link rel="icon" type="image/png" href="assets/favicon-32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="assets/favicon-192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="status-shell">
+  <div>
+    <div class="glyph">⏳</div>
+    <h1>Your account is being reviewed.</h1>
+    <p>An admin needs to approve your account before you can enter the Study Hub. This is usually quick — check back soon.</p>
+    <button id="logout-btn" class="btn btn-line-on-ink">Log out</button>
+  </div>
+</div>
+
+<script type="module">
+  import { guardStatusPage, logout } from './js/app.js';
+
+  guardStatusPage('pending');
+
+  document.getElementById('logout-btn').addEventListener('click', logout);
+</script>
+</body>
+</html>

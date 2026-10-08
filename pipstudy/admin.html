@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Admin — Partners in Progress</title>
+<link rel="icon" type="image/png" href="assets/favicon-32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="assets/favicon-192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="admin-shell">
+  <aside class="admin-sidebar">
+    <div class="brand"><a href="hub.html" style="text-decoration:none; color:inherit; display:flex; align-items:center; gap:10px;"><img class="brand-mark-img" src="assets/logo.png" alt="Partners in Progress logo">Partners in Progress</a></div>
+    <nav id="admin-nav">
+      <a href="#overview" data-section="overview">📊 Overview</a>
+      <a href="#approvals" data-section="approvals">✅ Approvals</a>
+      <a href="#students" data-section="students">👥 Students</a>
+      <a href="#posts" data-section="posts">📝 Posts</a>
+      <a href="#reports" data-section="reports">🚩 Reports</a>
+      <a href="#announcements" data-section="announcements">📢 Announcements</a>
+      <a href="#sessions" data-section="sessions">🔒 Sessions</a>
+      <a href="#group-requests" data-section="group-requests">💬 Group Requests</a>
+      <a href="hub.html" style="margin-top:16px; opacity:0.7;">← Back to Study Hub</a>
+    </nav>
+  </aside>
+
+  <div class="admin-main">
+    <div class="admin-topbar">
+      <h1 id="admin-title">Overview <span class="admin-badge">ADMIN</span></h1>
+      <button id="admin-logout" class="btn btn-line btn-sm">Log out</button>
+    </div>
+    <div class="admin-mobile-tabs" id="admin-mobile-tabs">
+      <a href="#overview" data-section="overview">Overview</a>
+      <a href="#approvals" data-section="approvals">Approvals</a>
+      <a href="#students" data-section="students">Students</a>
+      <a href="#posts" data-section="posts">Posts</a>
+      <a href="#reports" data-section="reports">Reports</a>
+      <a href="#announcements" data-section="announcements">Announcements</a>
+      <a href="#sessions" data-section="sessions">Sessions</a>
+      <a href="#group-requests" data-section="group-requests">Group Requests</a>
+    </div>
+
+    <div class="admin-content">
+
+      <!-- OVERVIEW -->
+      <section data-panel="overview">
+        <div class="overview-grid stagger">
+          <div class="card overview-card"><div class="num" id="stat-total">—</div><div class="label">👥 Total students</div></div>
+          <div class="card overview-card"><div class="num" id="stat-active">—</div><div class="label">⏳ Active sessions</div></div>
+          <div class="card overview-card"><div class="num" id="stat-pending">—</div><div class="label">📝 Pending approvals</div></div>
+          <div class="card overview-card"><div class="num" id="stat-reports">—</div><div class="label">🚩 Open reports</div></div>
+          <div class="card overview-card"><div class="num" id="stat-today">—</div><div class="label">📈 Sessions today</div></div>
+        </div>
+      </section>
+
+      <!-- APPROVALS -->
+      <section data-panel="approvals" class="hidden">
+        <div class="admin-table-scroll">
+          <table class="admin-table">
+            <thead><tr><th>Name</th><th>School</th><th>Class</th><th>Marks</th><th>Registered</th><th>Email</th><th>Actions</th></tr></thead>
+            <tbody id="approvals-body"><tr class="skel-row"><td><span class="skel skel-avatar"></span><span class="skel skel-text w-lg"></span></td><td><span class="skel skel-text w-sm"></span></td><td><span class="skel skel-text "></span></td><td><span class="skel skel-text w-sm"></span></td><td><span class="skel skel-text "></span></td><td><span class="skel skel-text w-lg"></span></td><td><span class="skel skel-text "></span></td></tr><tr class="skel-row"><td><span class="skel skel-avatar"></span><span class="skel skel-text w-lg"></span></td><td><span class="skel skel-text w-sm"></span></td><td><span class="skel skel-text "></span></td><td><span class="skel skel-text w-sm"></span></td><td><span class="skel skel-text "></span></td><td><span class="skel skel-text w-lg"></span></td><td><span class="skel skel-text "></span></td></tr><tr class="skel-row"><td><span class="skel skel-avatar"></span><span class="skel skel-text w-lg"></span></td><td><span class="skel skel-text w-sm"></span></td><td><span class="skel skel-text "></span></td><td><span class="skel skel-text w-sm"></span></td><td><span class="skel skel-text "></span></td><td><span class="skel skel-text w-lg"></span></td><td><span class="skel skel-text "></span></td></tr></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- STUDENTS -->
+      <section data-panel="students" class="hidden">
+        <div class="admin-toolbar">
+          <input type="search" id="student-search" placeholder="Search students…">
+        </div>
+        <div class="admin-table-scroll">
+          <table class="admin-table">
+            <thead><tr><th>Name</th><th>School / class</th><th>Role</th><th>Status</th><th>Joined</th><th>Actions</th></tr></thead>
+            <tbody id="students-body"><tr class="skel-row"><td><span class="skel skel-avatar"></span><span class="skel skel-text w-lg"></span></td><td><span class="skel skel-text w-sm"></span></td><td><span class="skel skel-text "></span></td><td><span class="skel skel-text w-sm"></span></td><td><span class="skel skel-text "></span></td><td><span class="skel skel-text w-lg"></span></td></tr><tr class="skel-row"><td><span class="skel skel-avatar"></span><span class="skel skel-text w-lg"></span></td><td><span class="skel skel-text w-sm"></span></td><td><span class="skel skel-text "></span></td><td><span class="skel skel-text w-sm"></span></td><td><span class="skel skel-text "></span></td><td><span class="skel skel-text w-lg"></span></td></tr><tr class="skel-row"><td><span class="skel skel-avatar"></span><span class="skel skel-text w-lg"></span></td><td><span class="skel skel-text w-sm"></span></td><td><span class="skel skel-text "></span></td><td><span class="skel skel-text w-sm"></span></td><td><span class="skel skel-text "></span></td><td><span class="skel skel-text w-lg"></span></td></tr></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- POSTS -->
+      <section data-panel="posts" class="hidden">
+        <div class="admin-toolbar">
+          <input type="search" id="post-search" placeholder="Search posts…">
+        </div>
+        <div class="admin-table-scroll">
+          <table class="admin-table">
+            <thead><tr><th>Author</th><th>Message</th><th>Posted</th><th>Actions</th></tr></thead>
+            <tbody id="posts-body"><tr class="skel-row"><td><span class="skel skel-avatar"></span><span class="skel skel-text w-lg"></span></td><td><span class="skel skel-text w-sm"></span></td><td><span class="skel skel-text "></span></td><td><span class="skel skel-text w-sm"></span></td></tr><tr class="skel-row"><td><span class="skel skel-avatar"></span><span class="skel skel-text w-lg"></span></td><td><span class="skel skel-text w-sm"></span></td><td><span class="skel skel-text "></span></td><td><span class="skel skel-text w-sm"></span></td></tr><tr class="skel-row"><td><span class="skel skel-avatar"></span><span class="skel skel-text w-lg"></span></td><td><span class="skel skel-text w-sm"></span></td><td><span class="skel skel-text "></span></td><td><span class="skel skel-text w-sm"></span></td></tr></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- REPORTS -->
+      <section data-panel="reports" class="hidden">
+        <div class="admin-table-scroll">
+          <table class="admin-table">
+            <thead><tr><th>Reported post</th><th>Reporter</th><th>Reason</th><th>Date</th><th>Status</th><th>Actions</th></tr></thead>
+            <tbody id="reports-body"><tr class="skel-row"><td><span class="skel skel-avatar"></span><span class="skel skel-text w-lg"></span></td><td><span class="skel skel-text w-sm"></span></td><td><span class="skel skel-text "></span></td><td><span class="skel skel-text w-sm"></span></td><td><span class="skel skel-text "></span></td><td><span class="skel skel-text w-lg"></span></td></tr><tr class="skel-row"><td><span class="skel skel-avatar"></span><span class="skel skel-text w-lg"></span></td><td><span class="skel skel-text w-sm"></span></td><td><span class="skel skel-text "></span></td><td><span class="skel skel-text w-sm"></span></td><td><span class="skel skel-text "></span></td><td><span class="skel skel-text w-lg"></span></td></tr><tr class="skel-row"><td><span class="skel skel-avatar"></span><span class="skel skel-text w-lg"></span></td><td><span class="skel skel-text w-sm"></span></td><td><span class="skel skel-text "></span></td><td><span class="skel skel-text w-sm"></span></td><td><span class="skel skel-text "></span></td><td><span class="skel skel-text w-lg"></span></td></tr></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ANNOUNCEMENTS -->
+      <section data-panel="announcements" class="hidden">
+        <div class="card card-pad" style="margin-bottom: 20px; max-width: 480px;">
+          <div class="feed-heading" style="margin-top:0;">New announcement</div>
+          <form id="announcement-form">
+            <div class="field"><label for="ann-title">Title</label><input id="ann-title" type="text" required></div>
+            <div class="field"><label for="ann-message">Message</label><textarea id="ann-message" rows="3" required style="width:100%; padding:12px 14px; border:1px solid var(--mist-line); border-radius:var(--r-sm); font-family:inherit;"></textarea></div>
+            <button type="submit" class="btn btn-gold">Post announcement</button>
+          </form>
+        </div>
+        <div class="admin-table-scroll">
+          <table class="admin-table">
+            <thead><tr><th>Title</th><th>Message</th><th>Status</th><th>Posted</th><th>Actions</th></tr></thead>
+            <tbody id="announcements-body"><tr class="skel-row"><td><span class="skel skel-avatar"></span><span class="skel skel-text w-lg"></span></td><td><span class="skel skel-text w-sm"></span></td><td><span class="skel skel-text "></span></td><td><span class="skel skel-text w-sm"></span></td><td><span class="skel skel-text "></span></td></tr><tr class="skel-row"><td><span class="skel skel-avatar"></span><span class="skel skel-text w-lg"></span></td><td><span class="skel skel-text w-sm"></span></td><td><span class="skel skel-text "></span></td><td><span class="skel skel-text w-sm"></span></td><td><span class="skel skel-text "></span></td></tr><tr class="skel-row"><td><span class="skel skel-avatar"></span><span class="skel skel-text w-lg"></span></td><td><span class="skel skel-text w-sm"></span></td><td><span class="skel skel-text "></span></td><td><span class="skel skel-text w-sm"></span></td><td><span class="skel skel-text "></span></td></tr></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- SESSIONS -->
+      <section data-panel="sessions" class="hidden">
+        <div class="admin-table-scroll">
+          <table class="admin-table">
+            <thead><tr><th>Student</th><th>Subject</th><th>Goal</th><th>Duration</th><th>Started</th><th>Status</th><th>Actions</th></tr></thead>
+            <tbody id="sessions-body"><tr class="skel-row"><td><span class="skel skel-avatar"></span><span class="skel skel-text w-lg"></span></td><td><span class="skel skel-text w-sm"></span></td><td><span class="skel skel-text "></span></td><td><span class="skel skel-text w-sm"></span></td><td><span class="skel skel-text "></span></td><td><span class="skel skel-text w-lg"></span></td><td><span class="skel skel-text "></span></td></tr><tr class="skel-row"><td><span class="skel skel-avatar"></span><span class="skel skel-text w-lg"></span></td><td><span class="skel skel-text w-sm"></span></td><td><span class="skel skel-text "></span></td><td><span class="skel skel-text w-sm"></span></td><td><span class="skel skel-text "></span></td><td><span class="skel skel-text w-lg"></span></td><td><span class="skel skel-text "></span></td></tr><tr class="skel-row"><td><span class="skel skel-avatar"></span><span class="skel skel-text w-lg"></span></td><td><span class="skel skel-text w-sm"></span></td><td><span class="skel skel-text "></span></td><td><span class="skel skel-text w-sm"></span></td><td><span class="skel skel-text "></span></td><td><span class="skel skel-text w-lg"></span></td><td><span class="skel skel-text "></span></td></tr></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- GROUP REQUESTS -->
+      <section data-panel="group-requests" class="hidden">
+        <p class="muted" style="margin-top:0 0 14px;">People who filled the "Join our WhatsApp group" form on the landing page, before being sent the invite link.</p>
+        <div class="admin-toolbar">
+          <input type="search" id="group-request-search" placeholder="Search by name or school…">
+        </div>
+        <div class="admin-table-scroll">
+          <table class="admin-table">
+            <thead><tr><th>Name</th><th>Marks</th><th>Class</th><th>School</th><th>WhatsApp</th><th>Submitted</th></tr></thead>
+            <tbody id="group-requests-body"><tr class="skel-row"><td><span class="skel skel-avatar"></span><span class="skel skel-text w-lg"></span></td><td><span class="skel skel-text w-sm"></span></td><td><span class="skel skel-text "></span></td><td><span class="skel skel-text w-sm"></span></td><td><span class="skel skel-text "></span></td><td><span class="skel skel-text w-lg"></span></td></tr><tr class="skel-row"><td><span class="skel skel-avatar"></span><span class="skel skel-text w-lg"></span></td><td><span class="skel skel-text w-sm"></span></td><td><span class="skel skel-text "></span></td><td><span class="skel skel-text w-sm"></span></td><td><span class="skel skel-text "></span></td><td><span class="skel skel-text w-lg"></span></td></tr><tr class="skel-row"><td><span class="skel skel-avatar"></span><span class="skel skel-text w-lg"></span></td><td><span class="skel skel-text w-sm"></span></td><td><span class="skel skel-text "></span></td><td><span class="skel skel-text w-sm"></span></td><td><span class="skel skel-text "></span></td><td><span class="skel skel-text w-lg"></span></td></tr></tbody>
+          </table>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+<script type="module" src="js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Join Partners in Progress</title>
+<link rel="icon" type="image/png" href="assets/favicon-32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="assets/favicon-192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="auth-shell">
+  <div class="auth-card">
+    <div class="auth-brand"><a href="index.html"><img class="brand-mark-img brand-mark-img-lg" src="assets/logo.png" alt="Partners in Progress logo">Partners in Progress</a></div>
+
+    <div class="auth-tabs">
+      <button class="auth-tab" data-tab="login">Log in</button>
+      <button class="auth-tab" data-tab="signup">Sign up</button>
+    </div>
+
+    <div id="form-error" class="form-error"></div>
+
+    <!-- LOGIN -->
+    <div class="auth-panel" data-panel="login">
+      <form id="login-form">
+        <div class="field">
+          <label for="login-email">Email</label>
+          <input id="login-email" type="email" required autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="login-password">Password</label>
+          <input id="login-password" type="password" required autocomplete="current-password">
+        </div>
+        <button type="submit" class="btn btn-gold btn-block">Log in</button>
+      </form>
+      <p class="auth-switch">New here? <a href="#" data-switch="signup">Create an account</a></p>
+    </div>
+
+    <!-- SIGNUP -->
+    <div class="auth-panel" data-panel="signup">
+      <form id="signup-form">
+        <div class="field">
+          <label for="su-name">Full name</label>
+          <input id="su-name" type="text" required autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="su-email">Email</label>
+          <input id="su-email" type="email" required autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="su-password">Password</label>
+          <input id="su-password" type="password" required minlength="6" autocomplete="new-password">
+          <div class="field-hint">At least 6 characters.</div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="su-school">School / college</label>
+            <input id="su-school" type="text" required>
+          </div>
+          <div class="field">
+            <label for="su-class">Class / grade</label>
+            <input id="su-class" type="text" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="su-marks">Marks (last exam / GPA)</label>
+          <input id="su-marks" type="text" required>
+          <div class="field-hint">Used for admin approval only — never shown publicly.</div>
+        </div>
+        <button type="submit" class="btn btn-gold btn-block">Create account</button>
+        <div class="field-hint" style="text-align:center; margin-top:12px;">
+          Your account will be reviewed by an admin before you can enter the Study Hub.
+        </div>
+      </form>
+      <p class="auth-switch">Already a member? <a href="#" data-switch="login">Log in</a></p>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Progress — Partners in Progress</title>
+<link rel="icon" type="image/png" href="assets/favicon-32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="assets/favicon-192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div id="app-nav" class="app-nav"></div>
+
+<main class="app-main">
+  <div class="container" style="max-width: 620px;">
+    <h2>Your progress</h2>
+    <p class="muted">Small progress, but progress.</p>
+
+    <div class="stat-grid stagger">
+      <div class="card stat-card"><div class="num" id="stat-time">—</div><div class="label">Focus time</div></div>
+      <div class="card stat-card"><div class="num" id="stat-sessions">—</div><div class="label">Sessions</div></div>
+      <div class="card stat-card"><div class="num" id="stat-streak">—</div><div class="label">Current streak</div></div>
+      <div class="card stat-card"><div class="num" id="stat-goals">—</div><div class="label">Completed goals</div></div>
+    </div>
+
+    <div class="card card-pad">
+      <div class="feed-heading" style="margin-top:0;">This week</div>
+      <div class="week-strip" id="week-strip"></div>
+    </div>
+  </div>
+</main>
+
+<div id="bottom-nav" class="bottom-nav"></div>
+
+<script type="module" src="js/progress.js"></script>
+</body>
+</html>
